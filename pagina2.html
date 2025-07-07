@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Capítulo I - A Profecia do Pato</title>
+  <style>
+    body {
+      background-color: #f5f0e6;
+      font-family: 'Georgia', serif;
+      margin: 0;
+      padding: 0;
+      color: #3e3e3e;
+    }
+    .container {
+      max-width: 800px;
+      margin: auto;
+      padding: 40px;
+      background-color: #ffffffcc;
+      border-radius: 12px;
+      margin-top: 60px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    }
+    h2 {
+      font-size: 2em;
+      color: #556b2f;
+      margin-bottom: 20px;
+    }
+    p {
+      font-size: 1.2em;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+    .question {
+      margin-top: 30px;
+    }
+    .options button {
+      display: block;
+      margin: 10px auto;
+      padding: 10px 20px;
+      font-size: 1.1em;
+      background-color: #6b8e23;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    .options button:hover {
+      background-color: #556b2f;
+    }
+    #feedback {
+      margin-top: 20px;
+      font-weight: bold;
+    }
+    #nextBtn {
+      display: none;
+      margin-top: 30px;
+      background-color: #3e5f1b;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Capítulo I – A Profecia do Pato</h2>
+    <p>Era uma vez um príncipe de coração solitário, que passava as noites a olhar o céu e a perguntar-se: "Onde andarás, minha princesa?".</p>
+    <p>Sem resposta dos astros, virou-se então para o seu fiel conselheiro: um pato sábio chamado Anacleto. O dito cujo, entre grasnadelas e goles de cevada, prometeu-lhe ajuda. "Amanhã, meu Infante, terás um bilhete meu. Mas terás de provar que és digno..."</p>
+    <p>No dia seguinte, no peitoril da janela do castelo, repousava um pergaminho com letras miudinhas e penas coladas no canto. Era a primeira pista.</p>
+
+    <div class="question">
+      <p><em>Para mereceres o coração desta dama, terás de te mostrar merecedor... Qual dirias que seria o primeiro encontro perfeito?</em></p>
+      <div class="options">
+        <button onclick="checkAnswer(this, false)">Ir ao cinema ver uma comédia romântica</button>
+        <button onclick="checkAnswer(this, false)">Passeio à beira-mar com pôr do sol</button>
+        <button onclick="checkAnswer(this, true)">Lanchar Chocapic no jardim Mário Soares</button>
+        <button onclick="checkAnswer(this, false)">Beijar sob as estrelas após um jantar fancy</button>
+      </div>
+    </div>
+
+    <p id="feedback"></p>
+    <button id="nextBtn" onclick="location.href='pagina3.html'">Avançar para a próxima pista</button>
+  </div>
+
+  <script>
+    function checkAnswer(button, isCorrect) {
+      const feedback = document.getElementById('feedback');
+      const nextBtn = document.getElementById('nextBtn');
+      if (isCorrect) {
+        feedback.textContent = '🎉 Bravo, Infante! Ganhaste a primeira peça do puzzle. Avança!';
+        feedback.style.color = '#3e5f1b';
+        nextBtn.style.display = 'block';
+      } else {
+        feedback.textContent = 'Hmm... Tenta de novo, valente cavaleiro. Isso não soa a Miça!';
+        feedback.style.color = '#a94442';
+        nextBtn.style.display = 'none';
+      }
+    }
+  </script>
+</body>
+</html>
