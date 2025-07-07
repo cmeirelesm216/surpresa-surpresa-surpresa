@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Capítulo III - A Prova das Alcunhas</title>
+  <style>
+    body {
+      background-color: #f5f0e6;
+      font-family: 'Georgia', serif;
+      margin: 0;
+      padding: 0;
+      color: #3e3e3e;
+    }
+    .container {
+      max-width: 800px;
+      margin: auto;
+      padding: 40px;
+      background-color: #ffffffcc;
+      border-radius: 12px;
+      margin-top: 60px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    }
+    h2 {
+      font-size: 2em;
+      color: #556b2f;
+      margin-bottom: 20px;
+    }
+    p {
+      font-size: 1.2em;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+    .options button {
+      display: block;
+      margin: 10px auto;
+      padding: 10px 20px;
+      font-size: 1.1em;
+      background-color: #6b8e23;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    .options button:hover {
+      background-color: #556b2f;
+    }
+    #feedback {
+      margin-top: 20px;
+      font-weight: bold;
+    }
+    #nextBtn {
+      display: none;
+      margin-top: 30px;
+      background-color: #3e5f1b;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Capítulo III – A Prova das Alcunhas</h2>
+    <p>Estás-te a sair melhor do que o previsto, bravo Infante. A princesa de quem te falo tem um pequeno… capricho. Ela adora alcunhas. Parvas, estranhas, mas cheias de intenção.</p>
+    <p>Para mereceres a sua mão (ou pelo menos a próxima pista), há uma última questão:</p>
+
+    <div class="options">
+      <button onclick="verificar(this, false)">Tratá-la por Bolacha Maria Recheada</button>
+      <button onclick="verificar(this, false)">Chamá-la de Cotonete de Estimação</button>
+      <button onclick="verificar(this, false)">Miminho do Pântano</button>
+      <button onclick="verificar(this, true)">Enganar-te no primeiro encontro e, sem querer, chamar-lhe Miça</button>
+    </div>
+
+    <p id="feedback"></p>
+    <button id="nextBtn" onclick="location.href='pagina5.html'">Avançar para o Capítulo Final</button>
+  </div>
+
+  <script>
+    function verificar(button, isCorrect) {
+      const feedback = document.getElementById('feedback');
+      const nextBtn = document.getElementById('nextBtn');
+
+      if (isCorrect) {
+        feedback.textContent = '🧩 Miçamente correto! Ganhaste a última peça do puzzle.';
+        feedback.style.color = '#3e5f1b';
+        nextBtn.style.display = 'block';
+      } else {
+        feedback.textContent = 'Erraste… esta princesa é exigente nas alcunhas!';
+        feedback.style.color = '#a94442';
+        nextBtn.style.display = 'none';
+      }
+    }
+  </script>
+</body>
+</html>
